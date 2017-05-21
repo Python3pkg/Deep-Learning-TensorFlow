@@ -144,7 +144,7 @@ if __name__ == '__main__':
     sdae.fit(trX, trY, vlX, vlY)
 
     # Compute the accuracy of the model
-    print('Test set accuracy: {}'.format(sdae.score(teX, teY)))
+    print(('Test set accuracy: {}'.format(sdae.score(teX, teY))))
 
     # Save the predictions of the model
     if FLAGS.save_predictions:

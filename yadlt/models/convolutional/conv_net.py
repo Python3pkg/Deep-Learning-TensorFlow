@@ -1,7 +1,7 @@
 """Implementation of Convolutional Neural Networks using TensorFlow."""
 
-from __future__ import division
-from __future__ import print_function
+
+
 
 import numpy as np
 import tensorflow as tf
@@ -76,7 +76,7 @@ class ConvolutionalNetwork(SupervisedModel):
         """
         shuff = list(zip(train_set, train_labels))
 
-        pbar = tqdm(range(self.num_epochs))
+        pbar = tqdm(list(range(self.num_epochs)))
         for i in pbar:
 
             np.random.shuffle(list(shuff))
@@ -84,7 +84,7 @@ class ConvolutionalNetwork(SupervisedModel):
                 shuff, self.batch_size)]
 
             for batch in batches:
-                x_batch, y_batch = zip(*batch)
+                x_batch, y_batch = list(zip(*batch))
                 self.tf_session.run(
                     self.train_step,
                     feed_dict={self.input_data: x_batch,

@@ -1,13 +1,13 @@
 """Datasets module. Provides utilities to load popular datasets."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 from tensorflow.examples.tutorials.mnist import input_data
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 

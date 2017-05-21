@@ -85,4 +85,4 @@ if __name__ == '__main__':
     l.fit(trX, trY, vlX, vlY)
 
     # Test the model
-    print('Test set accuracy: {}'.format(l.score(teX, teY)))
+    print(('Test set accuracy: {}'.format(l.score(teX, teY))))

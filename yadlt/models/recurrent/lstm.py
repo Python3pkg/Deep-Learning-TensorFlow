@@ -1,7 +1,7 @@
 """LSTM Tensorflow implementation."""
 
-from __future__ import division
-from __future__ import print_function
+
+
 
 import numpy as np
 import tensorflow as tf
@@ -163,4 +163,4 @@ class LSTM(Model):
         grads, _ = tf.clip_by_global_norm(tf.gradients(self.cost, tvars),
                                           self.max_grad_norm)
         optimizer = tf.train.GradientDescentOptimizer(self.lr_var)
-        self._train_op = optimizer.apply_gradients(zip(grads, tvars))
+        self._train_op = optimizer.apply_gradients(list(zip(grads, tvars)))

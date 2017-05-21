@@ -1,7 +1,7 @@
 """Restricted Boltzmann Machine TensorFlow implementation."""
 
-from __future__ import division
-from __future__ import print_function
+
+
 
 import numpy as np
 import tensorflow as tf
@@ -69,7 +69,7 @@ class RBM(UnsupervisedModel):
         :param validation_set: validation set. optional, default None
         :return: self
         """
-        pbar = tqdm(range(self.num_epochs))
+        pbar = tqdm(list(range(self.num_epochs)))
         for i in pbar:
             self._run_train_step(train_set)
 

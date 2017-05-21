@@ -1,7 +1,7 @@
 """Implementation of Denoising Autoencoder using TensorFlow."""
 
-from __future__ import division
-from __future__ import print_function
+
+
 
 import numpy as np
 import tensorflow as tf
@@ -125,7 +125,7 @@ class DenoisingAutoencoder(UnsupervisedModel):
 
         self : trained model instance
         """
-        pbar = tqdm(range(self.num_epochs))
+        pbar = tqdm(list(range(self.num_epochs)))
         for i in pbar:
             self._run_train_step(train_X)
             if val_X is not None:
@@ -164,7 +164,7 @@ class DenoisingAutoencoder(UnsupervisedModel):
         batches = [_ for _ in utilities.gen_batches(shuff, self.batch_size)]
 
         for batch in batches:
-            x_batch, x_corr_batch = zip(*batch)
+            x_batch, x_corr_batch = list(zip(*batch))
             tr_feed = {self.input_data_orig: x_batch,
                        self.input_data: x_corr_batch}
             self.tf_session.run(self.train_step, feed_dict=tr_feed)

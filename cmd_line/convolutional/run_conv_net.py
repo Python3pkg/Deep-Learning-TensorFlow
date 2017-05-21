@@ -90,4 +90,4 @@ if __name__ == '__main__':
     convnet.fit(trX, trY, vlX, vlY)
 
     # Test the model
-    print('Test set accuracy: {}'.format(convnet.score(teX, teY)))
+    print(('Test set accuracy: {}'.format(convnet.score(teX, teY))))

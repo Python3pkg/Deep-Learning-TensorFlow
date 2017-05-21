@@ -1,8 +1,8 @@
 """Utitilies module."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import numpy as np
 from scipy import misc
@@ -213,9 +213,9 @@ def expand_args(**args_to_expand):
     """
     layers = args_to_expand['layers']
     try:
-        items = args_to_expand.iteritems()
+        items = iter(args_to_expand.items())
     except AttributeError:
-        items = args_to_expand.items()
+        items = list(args_to_expand.items())
 
     for key, val in items:
         if isinstance(val, list) and len(val) != len(layers):

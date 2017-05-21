@@ -122,7 +122,7 @@ if __name__ == '__main__':
     srbm.fit(trX, trY, vlX, vlY)
 
     # Test the model
-    print('Test set accuracy: {}'.format(srbm.score(teX, teY)))
+    print(('Test set accuracy: {}'.format(srbm.score(teX, teY))))
 
     # Save the predictions of the model
     if FLAGS.save_predictions:
